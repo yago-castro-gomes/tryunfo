@@ -107,7 +107,7 @@ export default class Form extends Component {
             name="super"
             data-testid="trunfo-input"
             id="super"
-            value={ cardTrunfo }
+            checked={ cardTrunfo }
             onChange={ onInputChange }
           />
         </label>
