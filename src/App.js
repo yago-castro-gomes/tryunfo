@@ -49,13 +49,24 @@ class App extends React.Component {
   };
 
   onSaveButtonClick = () => {
+    const { cardName, cardDescription, cardAttr1, cardAttr2,
+      cardTrunfo, cardImage, cardRare } = this.state;
     this.setState((prevState) => ({
-      savedCard: [...prevState.savedCard],
+      savedCard: [...prevState.savedCard, [
+        cardName,
+        cardDescription,
+        cardAttr1,
+        cardAttr2,
+        cardRare,
+        cardTrunfo,
+        cardImage,
+      ],
+      ],
       cardName: '',
       cardDescription: '',
-      cardAttr1: 0,
-      cardAttr2: 0,
-      cardAttr3: 0,
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
       cardRare: 'normal',
     }));
