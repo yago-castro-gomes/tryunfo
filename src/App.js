@@ -83,16 +83,6 @@ class App extends React.Component {
     });
   };
 
-  // showSaved = () => {
-  //   const { savedCard } = this.state;
-  //   savedCard.filter((save) => ((
-  //     <p>
-  //       {' '}
-  //       { save }
-  //       {' '}
-  //     </p>)));
-  // };
-
   render() {
     const {
       cardName,
@@ -104,6 +94,7 @@ class App extends React.Component {
       cardTrunfo,
       cardImage,
       hasTrunfo,
+      savedCard,
     } = this.state;
     return (
       <div>
@@ -133,6 +124,21 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        <div>
+          { savedCard.map((card, i) => (
+            <Card
+              key={ i }
+              cardName={ card.cardName }
+              cardDescription={ card.cardDescription }
+              cardAttr1={ card.cardAttr1 }
+              cardAttr2={ card.cardAttr2 }
+              cardAttr3={ card.cardAttr3 }
+              cardImage={ card.cardImage }
+              cardRare={ card.cardRare }
+              cardTrunfo={ card.cardTrunfo }
+            />
+          ))}
+        </div>
       </div>
     );
   }

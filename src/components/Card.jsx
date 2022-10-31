@@ -12,6 +12,7 @@ export default class Card extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      listCards,
     } = this.props;
     return (
       <div>
@@ -39,6 +40,12 @@ export default class Card extends Component {
         { cardTrunfo
           ? <p data-testid="trunfo-card"> Super Trunfo </p>
           : '' }
+        <div>
+          <p>
+            {' '}
+            { listCards }
+          </p>
+        </div>
       </div>
     );
   }
@@ -53,4 +60,5 @@ Card.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
+  listCards: PropTypes.string.isRequired,
 };
